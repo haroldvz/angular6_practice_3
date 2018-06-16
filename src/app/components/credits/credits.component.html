@@ -1,0 +1,13 @@
+<h2 class="cast-title">Cast</h2>
+<div *ngFor="let item of cast; let i = index;" class="container-credits-cards">
+  <mat-card class="example-card card-credits" >
+    <mat-card-header>
+      
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title><a routerLink="/actor/{{i}}">{{item.name}}</a></mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{item.profile_path}}" alt="Imagen de {{item.name}}" layout-fill>
+  </mat-card>
+</div>
+

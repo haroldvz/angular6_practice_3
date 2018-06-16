@@ -1,0 +1,41 @@
+<div fxLayout="row" fxLayoutGap="25px" fxLayoutAlign="center">
+  <div class="">
+    <mat-card class="img-detail-card flex-item">
+
+      <img mat-card-image class="header-card" src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" alt="Image {{movie.title}}">
+      <mat-card-content>
+        <h3 class="bold-type">Stats:</h3>
+        <app-stats [data]="{ popularity: movie.popularity, vote_average: movie.vote_average, vote_count: movie.vote_count }"></app-stats>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+
+
+  <div class="app-page-detail">
+    <h2>{{ movie.title }}</h2>
+    <div>{{ strGenres }}</div>
+    <div class="title">Release date:</div>
+    <div>{{ movie.release_date }}</div>
+    <div class="overview">
+    <div class="title">Overview:</div>
+      {{ movie.overview }}
+    </div>
+    <div>
+      <div class="title">Production companies:</div>
+      <div>{{ strProductionCompanies }}</div>
+    </div>
+    <div>
+      <div class="title">Production countries:</div>
+      <div>{{ strProductionCountries }}</div>
+    </div>
+    <div>
+      <div class="title">Spoken languages:</div>
+      <div>{{ strSpokenLanguages }}</div>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <button mat-raised-button (click) = "goToSearch()" color="warn">Back</button>
+    </div>
+  </div>
+</div>
