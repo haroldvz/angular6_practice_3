@@ -37,6 +37,7 @@ export class MovieDescriptor {
     public popularity: number;
     public vote_average: number;
     public vote_count: number;
+    public poster_path: string;
 
     public static import(rawData: any) {
         let movie: MovieDescriptor = new MovieDescriptor();
@@ -49,7 +50,8 @@ export class MovieDescriptor {
         movie.popularity = rawData.hasOwnProperty('popularity') ? rawData.popularity : 0;
         movie.vote_average = rawData.hasOwnProperty('vote_average') ? rawData.vote_average : 0;
         movie.vote_count = rawData.hasOwnProperty('vote_count') ? rawData.vote_count : 0;
-
+        movie.poster_path = rawData.hasOwnProperty('poster_path') ? rawData.poster_path : '';
+        
         return movie;
     }
 }

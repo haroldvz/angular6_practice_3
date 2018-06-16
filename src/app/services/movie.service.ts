@@ -5,7 +5,7 @@ import { environment } from './../../environments/environment';
 import { MovieModel } from './../types/movie.model';
 
 import {map} from 'rxjs/internal/operators/map';
-
+import { MovieDescriptor, ResponseDescriptor } from '../types/search.type';
 
 @Injectable()
 export class MovieService {
@@ -22,11 +22,8 @@ export class MovieService {
     * @param url: query request url
     * @param args: Additional arguments to query, default value empty ''
     */
-   sendRequest(url: string, args = ''){
+   /*sendRequest(url: string, args = ''){
     url += ('?api_key=' + environment.api_key + args);
-    /*return this._http.get<Array<Movie>>(url).subscribe(data => {   // data is already a JSON object
-        console.log(data);
-    });*/
     return this._http.get(url).pipe(map(
       (data: any) => {
         return data.results.map((item) => {
@@ -36,12 +33,34 @@ export class MovieService {
             title: item.title,
             backdrop_path:item.backdrop_path,
             poster_path:item.poster_path,
-            vote_average:item.vote_average
+            vote_average:item.vote_average,
+            overview:item.overview
           }
         });
       }
     ));
+  }*/
+
+
+  sendRequest(url: string, args = ''){
+    url += ('?api_key=' + environment.api_key + args);
+    return this._http.get(url).pipe(map(
+      (data) => {
+        return ResponseDescriptor.import(data);
+      }
+    ));
   }
+
+
+  /*getDetail(idMovie: number) {
+    return this.http
+      .get(this.url + idMovie + this.key)
+      .pipe(
+        map((data)=>{
+          return MovieDescriptor.import(data);
+        })
+      );
+  }*/
 
 
 

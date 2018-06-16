@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MovieService } from './../../services/movie.service';
+import { ResponseDescriptor } from '../../types/search.type';
 //primero modulos angular, luego material, luego nuestros modulos
 @Component({
   selector: 'app-list-movies',
@@ -9,14 +10,16 @@ import { MovieService } from './../../services/movie.service';
 })
 export class ListMoviesComponent implements OnInit {
 
+  public data: ResponseDescriptor = new ResponseDescriptor();
+
   constructor(private _movie_service:MovieService) { }
 
-  public items:any[];
+  public items:any;
 
   ngOnInit() {
     
     let r = this._movie_service.getTopRatedMovies(1).subscribe((data)=>{
-      this.items = data;
+      this.items = data.results;
     });
     console.log(this.items);
 
