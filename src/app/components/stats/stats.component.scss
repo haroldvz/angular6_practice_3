@@ -4,15 +4,19 @@
 }
 
 .app-stats {
-    background-color: azure;
+    background-color: lightgrey;
+    padding: 4%;
     .low {
-        color: lightgray;
+        color: black;
+        background-color: #808080;
     }
     .normal {
-        color: blue;
+
+        color: white;
     }
     .high {
-        color: lightgreen;
+        color: white;
+        background-color: #ff5722;
     }
     .invisible {
         display: none;

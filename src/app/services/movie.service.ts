@@ -52,16 +52,6 @@ export class MovieService {
   }
 
 
-  /*getDetail(idMovie: number) {
-    return this.http
-      .get(this.url + idMovie + this.key)
-      .pipe(
-        map((data)=>{
-          return MovieDescriptor.import(data);
-        })
-      );
-  }*/
-
 
 
   /**
@@ -83,7 +73,8 @@ export class MovieService {
             title: item.title,
             backdrop_path:item.backdrop_path,
             poster_path:item.poster_path,
-            vote_average:item.vote_average
+            vote_average:item.vote_average,
+            genre_ids:item.genre_ids
           }
         });
       }

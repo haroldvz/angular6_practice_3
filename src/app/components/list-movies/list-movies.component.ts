@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { MovieService } from './../../services/movie.service';
 import { ResponseDescriptor } from '../../types/search.type';
+import { DetailService } from '../../services/detail.service';
+import { GenresDescriptor } from '../../types/genres.type';
+import { GenresService } from '../../services/genres.service';
 //primero modulos angular, luego material, luego nuestros modulos
 @Component({
   selector: 'app-list-movies',
@@ -11,8 +14,14 @@ import { ResponseDescriptor } from '../../types/search.type';
 export class ListMoviesComponent implements OnInit {
 
   public data: ResponseDescriptor = new ResponseDescriptor();
+  public strGenres: string = '';
+  private detailService: DetailService;
 
-  constructor(private _movie_service:MovieService) { }
+  public genres: GenresDescriptor = new GenresDescriptor();
+
+ 
+  constructor(private _movie_service:MovieService,
+    private genresService: GenresService) { }
 
   public items:any;
 
@@ -20,7 +29,15 @@ export class ListMoviesComponent implements OnInit {
     
     let r = this._movie_service.getTopRatedMovies(1).subscribe((data)=>{
       this.items = data.results;
+      
     });
+
+    this.genresService.getAll().subscribe(
+      (data) => {
+        this.genres = data;
+      }
+    );
+
     console.log(this.items);
 
   

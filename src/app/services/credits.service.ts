@@ -25,6 +25,7 @@ export class CreditsService {
           return {
             id: item.id,
             name: item.name,
+            profile_path:item.profile_path,
           }
         });
       }

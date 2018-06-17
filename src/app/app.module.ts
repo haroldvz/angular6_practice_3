@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ActorService} from './services/actor.service';
 import { MovieService } from './services/movie.service';
@@ -66,7 +66,7 @@ import { TestCategoriesComponent } from './components/test-categories/test-categ
   ],
   imports: [
     BrowserModule,
-    
+    AngularFontAwesomeModule,
     AppRoutingModule,
     MatCardModule,
     MatButtonModule,

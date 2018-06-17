@@ -1,14 +1,29 @@
-.container-credits-cards{
-    padding: 30px;
-    //width: 500px;
-    //background-color: gray;
-}
+.app-credits{
+    .container-credits-cards{
+        padding: 0px;
+        margin-bottom: 20px;
+       
+        //width: 500px;
+        //background-color: gray;
+    }
 
-.card-credits{
-    background-color: lightslategray;
-}
+    .title-cast{
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    .card-credits{
+        background-color: #808080;
+    }
+    
+    .cast-title{
+        padding-left: 30px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    .header-card-cast{
+        padding-bottom: 20px;
+    }
 
-.cast-title{
-    padding-left: 30px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    .img-cast{height: 400px;width: 300px;}
 }
