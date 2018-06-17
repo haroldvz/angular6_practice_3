@@ -12,7 +12,7 @@
   
   <div class="app-stats">
       <mat-chip-list >
-          <mat-chip [ngClass]="{'high': data.popularity >= 12, 'normal': data.popularity < 12 && data.popularity >= 5, 'low': data.popularity < 5}" color="primary" selected="true">Popularity: {{ data.popularity | number:'1.1-2' }}</mat-chip>
+          <mat-chip [ngClass]="{'high': data.popularity >= 12, 'normal': data.popularity < 12 && data.popularity >= 5, 'low': data.popularity < 5}"  selected="true">Popularity: {{ data.popularity | number:'1.1-2' }}</mat-chip>
         </mat-chip-list>
     <!--<div [ngClass]="{'high': data.popularity >= 12, 'normal': data.popularity < 12 && data.popularity >= 5, 'low': data.popularity < 5}">Popularity: {{ data.popularity | number:'1.1-2' }}</div>-->
     <div [ngClass]="{'invisible': data.vote_average === 0 }">Vote average: {{ data.vote_average }}</div>
